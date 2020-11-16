@@ -10,6 +10,14 @@
   <!-- Подключаем стили -->
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-database.js"></script>
+
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -185,10 +193,12 @@
       <!-- /.post-footer -->
     </section>
   </main>
-<!--форма добавления постов-->
-<!--  <form action="#" class="add-post">
-    <input type="text" name="post-title" class="add-title" placeholder="Заголовок поста">
-    <textarea name="post-text" id="text" class="add-text" placeholder="Текст вашего поста"></textarea>
+  <!-- /.posts -->
+  <!--форма добавления постов-->
+  <form action="#" class="add-post">
+    <input type="text" name="title" class="add-title" placeholder="Заголовок поста">
+    <textarea name="text"  class="add-text" placeholder="Текст вашего поста"></textarea>
+    <input type="text" name="tags" class="add-tags" placeholder="Добавьте теги через запятую">
     <div class="add-buttons">
       <button type="submit" class="button add-button">
         <svg class="icon icon-fire">
@@ -196,7 +206,7 @@
         </svg>
         Опубликовать пост
       </button>
-      <button class="button button-outline">
+      <!--<button class="button button-outline">
         <svg class="icon icon-video">
           <use xlink:href="img/icons.svg#video"></use>
         </svg>
@@ -207,10 +217,9 @@
           <use xlink:href="img/icons.svg#photo"></use>
         </svg>
         Фото
-      </button>
+      </button>-->
     </div>
-  </form>-->
-  <!-- /.posts -->
+  </form>
   <aside class="sidebar">
     <div class="login">
       <form class="login-form">
