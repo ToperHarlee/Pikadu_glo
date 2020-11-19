@@ -38,7 +38,8 @@ const exitElem = document.querySelector('.exit'),
 
 const postWrapper = document.querySelector('.posts'),
     buttonNewPost = document.querySelector('.button-new-post'),
-    addPostElem = document.querySelector('.add-post');
+    addPostElem = document.querySelector('.add-post'),
+    loginForget = document.querySelector('.login-forget');
 
 const DEFAULT_PHOTO = userAvatarElem.src;
 
@@ -184,6 +185,7 @@ const setUsers = {
     // authorizedUser(user){
     //   this.user = user;
     // }
+    //отправка пароля на почту если забыл
     sendForget(email){
         firebase.auth().sendPasswordResetEmail(email)
             .then(() => {
@@ -195,18 +197,15 @@ const setUsers = {
     }
 };
 
-const loginForget = document.querySelector('.login-forget');
 loginForget.addEventListener('click', event => {
     event.preventDefault();
     setUsers.sendForget(emailInput.value);
-    emailInput.value = "";
+    emailInput.value = '';
 })
 
 
 const setPosts = {
     allPosts: [
-
-
 
         /*{
             title: 'Заголовок поста',
